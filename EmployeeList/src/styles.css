@@ -1,0 +1,19 @@
+body {
+  padding: 30px;
+}
+.repo-name {
+  font-weight: bold;
+}
+.user-details {
+  margin: 30px 0;
+  background: #eee;
+  padding: 10px 20px;
+}
+.filter-selection {
+  float: left;
+  width: 20%;
+  margin: 30px 0;
+}
+.user-results {
+  clear: both;
+}
