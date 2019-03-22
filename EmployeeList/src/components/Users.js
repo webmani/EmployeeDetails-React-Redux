@@ -3,6 +3,7 @@ import axios from "axios";
 import "../styles.css";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
+import { Label } from "office-ui-fabric-react/lib/Label";
 
 class GitHubRepos extends React.Component {
   constructor(props) {
@@ -18,8 +19,13 @@ class GitHubRepos extends React.Component {
       <div className="user-results">
         <div className="user-details">
           <img src={employeeDetails.avatar} />
-          <p>Emp ID: {employeeDetails.id}</p>
-          <h3 className="repo-name">Emp Name: {employeeDetails.first_name}</h3>
+          <p>
+            <Label>Emp ID : </Label>
+            <strong>{employeeDetails.id}</strong>
+          </p>
+          <h3 className="repo-name">
+            <Label>Emp Name : </Label> {employeeDetails.first_name}
+          </h3>
         </div>
       </div>
     );

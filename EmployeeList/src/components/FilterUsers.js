@@ -2,6 +2,10 @@ import React, { Component } from "react";
 import { getEmployeeDetails, clearEmployeeDetails } from "../actions/index.js";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
+import { css, classNamesFunction } from "office-ui-fabric-react/lib/Utilities";
+import { Label } from "office-ui-fabric-react/lib/Label";
+import { DefaultButton, PrimaryButton, IButtonProps } from "office-ui-fabric-react/lib/Button";
+
 
 const departments = [{ name: "HR" }, { name: "ENGINEERING" }];
 const employeeId = {
@@ -49,7 +53,7 @@ class FilterUsers extends Component {
       <div className="filter-options">
         <div className="filter-option">
           <div className="filter-selection">
-            <p>Departments</p>
+            <Label>Departments</Label>
 
             <select
               id="department"
@@ -65,8 +69,12 @@ class FilterUsers extends Component {
           </div>
 
           <div className="filter-selection">
-            <p>Emp ID</p>
-            <select id="empId" value={empId} onChange={this.employeeSelection}>
+            <Label>Emp ID</Label>
+            <select
+              id="empId"
+              value={empId}
+              onChange={this.employeeSelection}
+            >
               <option />
               {selectedHR &&
                 employeeId[selectedHR].map(Id => (
@@ -77,8 +85,17 @@ class FilterUsers extends Component {
           </div>
 
           <div className="filter-selection">
-            <button onClick={this.getDetails}>Get Details</button>
-            <button onClick={this.clearDetails}>Clear</button>
+            <PrimaryButton
+              onClick={this.getDetails}
+              data-automation-id="test"
+              text="Get Details"
+              allowDisabledFocus={true}
+            />
+            <PrimaryButton
+              data-automation-id="test"
+              onClick={this.clearDetails}
+              text="Clear"
+            />
           </div>
         </div>
       </div>
