@@ -5,7 +5,7 @@
   "keywords": [],
   "main": "index.js",
   "dependencies": {
-    "axios": "0.16.2",
+    "axios": "0.21.1",
     "office-ui-fabric-react": "^6.159.0",
     "prop-types": "15.5.10",
     "react": "16.8.4",
